@@ -1,28 +1,16 @@
 
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_timer.h>
+#include "draw_pixel.h"
 
-#define WIDTH 1260
-#define HEIGHT 660
-
-typedef struct pos
+void clear_window(SDL_Renderer *renderer, color_t color)
 {
-	int		x;
-	int		y;
-}			pos_t;
 
-typedef struct color
-{
-	int		R;
-	int		G;
-	int		B;
-	int		A;
-}			color_t;
+	SDL_SetRenderDrawColor(renderer, color.R, color.G, color.B, color.A);
+	SDL_RenderClear(renderer);
+}
 
-color_t	*new_color(int R, int G, int B, int A)
+color_t *new_color(int R, int G, int B, int A)
 {
-	color_t	*color;
+	color_t *color;
 
 	color = malloc(sizeof(color_t));
 	color->R = R;
@@ -32,63 +20,57 @@ color_t	*new_color(int R, int G, int B, int A)
 	return (color);
 }
 
-void	draw_block(SDL_Renderer *renderer, pos_t center_position, int width,
-		int height, color_t color)
+void draw_player(SDL_Renderer *renderer, pos_t center_position, int raduise, color_t color)
 {
-	int start_vertical, start_horizontal, x, y;
-	start_vertical = center_position.x - (width / 2);
-	start_horizontal = center_position.y - (height / 2);
-	if (start_vertical < 0)
-		start_vertical = 0;
-	if (start_horizontal < 0)
-		start_horizontal = 0;
-	x = start_vertical;
-	y = start_horizontal ;
+	float angle = 0;
+	float i_raduise = 0;
 	SDL_SetRenderDrawColor(renderer, color.R, color.G, color.B, color.A);
-	while (x < start_horizontal + height)
+	while (i_raduise < raduise)
 	{
-		y = start_vertical;
-		while (y < start_vertical + HEIGHT)
+		angle = 0;
+		while (angle <= 360)
 		{
-			if (y == start_vertical || y == start_vertical + width - 1
-				|| x == start_horizontal || x == start_horizontal + height - 1)
-				SDL_RenderDrawPoint(renderer, x, y);
+			int new_x = center_position.x + i_raduise * cos(angle);
+			int new_y = center_position.y + i_raduise * sin(angle);
+			SDL_RenderDrawPoint(renderer, new_x, new_y);
+			angle += .5;
+		}
+		i_raduise += .5;
+	}
+}
+
+void draw_block(SDL_Renderer *renderer, pos_t position)
+{
+	int x = position.x + 1, y = position.y + 1;
+	while (x < position.x + 60 - 1)
+	{
+		y = position.y;
+		while (y < position.y + 60 - 1)
+		{
+			SDL_RenderDrawPoint(renderer, x, y);
 			y++;
 		}
-		start_vertical++;
+		x++;
 	}
-	SDL_RenderPresent(renderer);
 }
-void	handle_colusion(pos_t *pos)
-{
-	if (pos->x + 60 >= WIDTH)
-		pos->x = WIDTH - 60;
-	if (pos->x - 60 <= 0)
-		pos->x = 60;
-	if (pos->y + 60 >= HEIGHT)
-		pos->y = HEIGHT - 60;
-	if (pos->y - 60 <= 0)
-		pos->y = 60;
-}
-void	draw_map(SDL_Renderer *renderer, pos_t *pos, color_t *color)
-{
-	int		i;
-	int		j;
-	pos_t	cur_pos;
 
-	char map[11][21] = {
-		"111111111111111111111",
-		"1      1   1        1",
-		"1   1111   1111111  1",
-		"1   1               1",
-		"1   1111 111111111 11",
-		"1   1  1 1         11",
-		"1   1    1       1 11",
-		"1      1 1       1 11",
-		"1   1111 111111111 11",
-		"1  1             1  1",
-		"111111111111111111111"};
-	while (i < 10)
+int handle_colusion(int new_x, int new_y, int player_size, char **map, int move)
+{
+	// end of map
+	if (new_x <= 0 || new_x <= 0)
+		return (0);
+	int tal_x = new_x / 60, tal_y = new_x / 60;
+	if (map[tal_y][tal_x] == '1')
+		return (0);
+	return (move);
+}
+
+void draw_map(SDL_Renderer *renderer, pos_t *pos, color_t *color, char **map)
+{
+	int i = 0, j = 0;
+	pos_t cur_pos;
+	SDL_SetRenderDrawColor(renderer, color->R, color->G, color->B, color->A);
+	while (map[i])
 	{
 		j = 0;
 		while (map[i][j])
@@ -97,29 +79,25 @@ void	draw_map(SDL_Renderer *renderer, pos_t *pos, color_t *color)
 			{
 				cur_pos.x = j * 60;
 				cur_pos.y = i * 60;
-				draw_block(renderer, cur_pos, 60, 60, *color);
+				draw_block(renderer, cur_pos);
 			}
 			j++;
 		}
 		i++;
 	}
 }
-void	update(SDL_Renderer *renderer, pos_t *pos, color_t *color)
-{
-	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-	SDL_RenderClear(renderer);
-	draw_block(renderer, *pos, 60, 60, *color);
-	draw_map(renderer, pos, new_color(255, 255, 255, 255));
-	SDL_SetRenderDrawColor(renderer, 80, 80, 80, 255);
-	SDL_RenderDrawPoint(renderer, pos->x, pos->y);
-}
-SDL_Event	*linsten_to_eventes(SDL_Renderer *renderer, pos_t *pos,
-		color_t *color)
-{
-	SDL_Event	event;
-	static int	speed;
 
-	speed = 1;
+void update(SDL_Renderer *renderer, pos_t *pos, color_t *color, char **map)
+{
+	clear_window(renderer, *new_color(0, 0, 0, 255));
+	draw_map(renderer, pos, new_color(255, 255, 255, 255), map);
+	draw_player(renderer, *pos, 15, *new_color(180, 180, 255, 255));
+	SDL_RenderPresent(renderer);
+}
+SDL_Event *linsten_to_eventes(SDL_Renderer *renderer, pos_t *pos, color_t *color, char **map)
+{
+	SDL_Event event;
+	static int speed = 1;
 	while (SDL_PollEvent(&event))
 	{
 		if (event.type == SDL_QUIT)
@@ -131,74 +109,46 @@ SDL_Event	*linsten_to_eventes(SDL_Renderer *renderer, pos_t *pos,
 			switch (event.key.keysym.scancode)
 			{
 			case SDL_SCANCODE_UP:
-				pos->y -= 10 * speed++;
-				break ;
+				pos->y -= handle_colusion(pos->x, pos->y - 10 * speed, 30, map, 10 * speed);
+				break;
 			case SDL_SCANCODE_DOWN:
-				pos->y += 10 * speed++;
-				break ;
+				pos->y += handle_colusion(pos->x , pos->y + 10 * speed, 30, map, 10 * speed);
+				break;
 			case SDL_SCANCODE_RIGHT:
-				pos->x += 10 * speed++;
-				break ;
+				pos->x += handle_colusion(pos->x + 10 * speed, pos->y, 30, map, 10 * speed);
+				break;
 			case SDL_SCANCODE_LEFT:
-				pos->x -= 10 * speed++;
-				break ;
+				pos->x -= handle_colusion(pos->x - 10 * speed, pos->y, 30, map, 10 * speed);
+				break;
 			default:
-				break ;
+				break;
 			}
+			speed++;
 			if (speed >= 10)
 				speed = 10;
-			handle_colusion(pos);
-			update(renderer, pos, color);
+			update(renderer, pos, color, map);
 		}
 	}
 	return (NULL);
 }
 
-char	**create_map(void)
+int main(void)
 {
-	int		i;
-	int		j;
-	char	**map;
-
-	map = malloc(((HEIGHT / 60) + 2) * sizeof(char *));
-	i = 0;
-	while (i < HEIGHT / 60)
-	{
-		map[i] = malloc(((WIDTH / 60) + 2) * sizeof(char));
-		j = 0;
-		while (j < WIDTH / 60)
-		{
-			if (j % 2)
-				map[i][j] = '1';
-			else
-				map[i][j] = '0';
-			j++;
-		}
-		map[i][j] = 0;
-		i++;
-	}
-	map[i] = NULL;
-	return (map);
-}
-
-int	main(void)
-{
-	SDL_Window		*window;
-	SDL_Renderer	*renderer;
-	color_t			*color;
-	pos_t			pos;
+	SDL_Window *window;
+	SDL_Renderer *renderer;
+	pos_t pos;
 
 	SDL_Init(SDL_INIT_EVERYTHING);
 	window = SDL_CreateWindow("App", SDL_WINDOWPOS_CENTERED,
-			SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, 0);
+							  SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, 0);
 	renderer = SDL_CreateRenderer(window, -1, 0);
-	color = new_color(0, 255, 255, 255);
 	pos.x = 2 * 60;
 	pos.y = 2 * 60;
-	update(renderer, &pos, color);
+	char **map = get_map();
+	update(renderer, &pos, new_color(0, 255, 255, 255), map);
 	while (1)
 	{
-		linsten_to_eventes(renderer, &pos, color);
+		linsten_to_eventes(renderer, &pos, new_color(0, 255, 255, 255), map);
 	}
 	return (0);
 }
