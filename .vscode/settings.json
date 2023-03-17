@@ -1,0 +1,9 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/Users/aaitouna/homebrew/opt/sdl2/include"
+    ],
+    "files.associations": {
+        "draw_pixel.h": "c",
+        "sdl_timer.h": "c"
+    }
+}

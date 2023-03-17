@@ -3,7 +3,6 @@
 
 void clear_window(SDL_Renderer *renderer, color_t color)
 {
-
 	SDL_SetRenderDrawColor(renderer, color.R, color.G, color.B, color.A);
 	SDL_RenderClear(renderer);
 }
@@ -18,25 +17,6 @@ color_t *new_color(int R, int G, int B, int A)
 	color->B = B;
 	color->A = A;
 	return (color);
-}
-
-void draw_player(SDL_Renderer *renderer, pos_t center_position, int raduise, color_t color)
-{
-	float angle = 0;
-	float i_raduise = 0;
-	SDL_SetRenderDrawColor(renderer, color.R, color.G, color.B, color.A);
-	while (i_raduise < raduise)
-	{
-		angle = 0;
-		while (angle <= 360)
-		{
-			int new_x = center_position.x + i_raduise * cos(angle);
-			int new_y = center_position.y + i_raduise * sin(angle);
-			SDL_RenderDrawPoint(renderer, new_x, new_y);
-			angle += .5;
-		}
-		i_raduise += .5;
-	}
 }
 
 void draw_block(SDL_Renderer *renderer, pos_t position)
@@ -56,10 +36,9 @@ void draw_block(SDL_Renderer *renderer, pos_t position)
 
 int handle_colusion(int new_x, int new_y, int player_size, char **map, int move)
 {
-	// end of map
-	if (new_x <= 0 || new_x <= 0)
+	if (new_x <= 0 || new_y <= 0)
 		return (0);
-	int tal_x = new_x / 60, tal_y = new_x / 60;
+	int tal_x = new_x / 60, tal_y = new_y / 60;
 	if (map[tal_y][tal_x] == '1')
 		return (0);
 	return (move);
@@ -97,7 +76,7 @@ void update(SDL_Renderer *renderer, pos_t *pos, color_t *color, char **map)
 SDL_Event *linsten_to_eventes(SDL_Renderer *renderer, pos_t *pos, color_t *color, char **map)
 {
 	SDL_Event event;
-	static int speed = 1;
+	static int speed = 2;
 	while (SDL_PollEvent(&event))
 	{
 		if (event.type == SDL_QUIT)
@@ -112,20 +91,19 @@ SDL_Event *linsten_to_eventes(SDL_Renderer *renderer, pos_t *pos, color_t *color
 				pos->y -= handle_colusion(pos->x, pos->y - 10 * speed, 30, map, 10 * speed);
 				break;
 			case SDL_SCANCODE_DOWN:
-				pos->y += handle_colusion(pos->x , pos->y + 10 * speed, 30, map, 10 * speed);
+				pos->y += handle_colusion(pos->x, pos->y + 10 * speed, 30, map, 10 * speed);
 				break;
 			case SDL_SCANCODE_RIGHT:
 				pos->x += handle_colusion(pos->x + 10 * speed, pos->y, 30, map, 10 * speed);
+				pos->angle++;
 				break;
 			case SDL_SCANCODE_LEFT:
 				pos->x -= handle_colusion(pos->x - 10 * speed, pos->y, 30, map, 10 * speed);
+				pos->angle--;
 				break;
-			default:
+				default:
 				break;
 			}
-			speed++;
-			if (speed >= 10)
-				speed = 10;
 			update(renderer, pos, color, map);
 		}
 	}
@@ -144,6 +122,7 @@ int main(void)
 	renderer = SDL_CreateRenderer(window, -1, 0);
 	pos.x = 2 * 60;
 	pos.y = 2 * 60;
+	pos.angle = 90;
 	char **map = get_map();
 	update(renderer, &pos, new_color(0, 255, 255, 255), map);
 	while (1)

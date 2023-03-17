@@ -14,6 +14,7 @@ typedef struct pos
 {
     int x;
     int y;
+    float angle;
 } pos_t;
 
 typedef struct color
@@ -24,5 +25,7 @@ typedef struct color
     int A;
 } color_t;
 
-char **get_map();
+char    **get_map();
+size_t  list_lenght(char **list);
+void    draw_player(SDL_Renderer *renderer, pos_t center_position, int raduise, color_t color);
 #endif
