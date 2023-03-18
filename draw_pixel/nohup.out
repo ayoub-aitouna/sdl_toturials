@@ -1,0 +1,243 @@
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_seq=1 ttl=253 time=1.76 ms
+64 bytes from 192.168.1.1: icmp_seq=2 ttl=253 time=1.37 ms
+64 bytes from 192.168.1.1: icmp_seq=3 ttl=253 time=1.25 ms
+64 bytes from 192.168.1.1: icmp_seq=4 ttl=253 time=1.30 ms
+64 bytes from 192.168.1.1: icmp_seq=5 ttl=253 time=1.26 ms
+64 bytes from 192.168.1.1: icmp_seq=6 ttl=253 time=0.970 ms
+64 bytes from 192.168.1.1: icmp_seq=7 ttl=253 time=4.18 ms
+64 bytes from 192.168.1.1: icmp_seq=8 ttl=253 time=1.60 ms
+
+--- 192.168.1.1 ping statistics ---
+8 packets transmitted, 8 received, 0% packet loss, time 7011ms
+rtt min/avg/max/mdev = 0.970/1.710/4.176/0.957 ms
+/usr/bin/startxfce4: X server already running on display 172.24.96.1:0
+
+(xfce4-session:13024): dbind-WARNING **: 03:50:39.716: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+_IceTransmkdir: Owner of /tmp/.ICE-unix should be set to root
+gpg-agent[13050]: WARNING: "--write-env-file" is an obsolete option - it has no effect
+gpg-agent: a gpg-agent is already running - not starting a new one
+
+(xfce4-session:13024): xfce4-session-WARNING **: 03:50:39.746: gpg-agent returned no PID in the variables
+
+(xfce4-session:13024): xfce4-session-WARNING **: 03:50:39.750: xfsm_manager_load_session: Something wrong with /home/ayoub/.cache/sessions/xfce4-session-172.24.96.1:0, Does it exist? Permissions issue?
+
+(xfwm4:13052): dbind-WARNING **: 03:50:39.805: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfwm4:13052): xfwm4-WARNING **: 03:50:39.901: Could not find a screen to manage, exiting
+
+(xfce4-panel:13064): dbind-WARNING **: 03:50:39.984: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfsettingsd:13063): dbind-WARNING **: 03:50:40.011: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+xfsettingsd-Message: 03:50:40.017: Skipping screen 0, it already has an xsettings manager...
+
+(xfsettingsd:13063): libupower-glib-WARNING **: 03:50:40.019: Couldn't connect to proxy: Could not connect: No such file or directory
+
+(xfsettingsd:13063): libupower-glib-CRITICAL **: 03:50:40.020: up_client_get_lid_is_closed: assertion 'UP_IS_CLIENT (client)' failed
+
+(xfsettingsd:13063): GLib-GObject-WARNING **: 03:50:40.020: invalid (NULL) pointer instance
+
+(xfsettingsd:13063): GLib-GObject-CRITICAL **: 03:50:40.020: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+xfce4-panel: No window manager registered on screen 0. To start the panel without this check, run with --disable-wm-check.
+xfsettingsd: Another clipboard manager is already running.
+
+(wrapper-2.0:13070): dbind-WARNING **: 03:50:45.294: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(wrapper-2.0:13071): dbind-WARNING **: 03:50:45.300: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(wrapper-2.0:13072): dbind-WARNING **: 03:50:45.304: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(wrapper-2.0:13073): dbind-WARNING **: 03:50:45.361: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(wrapper-2.0:13072): GLib-GIO-CRITICAL **: 03:50:45.450: g_file_new_for_path: assertion 'path != NULL' failed
+
+(wrapper-2.0:13072): GLib-GIO-CRITICAL **: 03:50:45.450: g_file_monitor_file: assertion 'G_IS_FILE (file)' failed
+
+(wrapper-2.0:13072): GLib-GObject-WARNING **: 03:50:45.450: invalid (NULL) pointer instance
+
+(wrapper-2.0:13072): GLib-GObject-CRITICAL **: 03:50:45.450: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(wrapper-2.0:13072): Gtk-WARNING **: 03:50:45.450: Attempting to add a widget with type GtkToggleButton to a container of type XfcePanelPlugin, but the widget is already inside a container of type XfcePanelPlugin, please remove the widget from its existing container first.
+
+** (wrapper-2.0:13071): WARNING **: 03:50:45.456: Binding 'XF86AudioLowerVolume' failed!
+
+(wrapper-2.0:13071): pulseaudio-plugin-WARNING **: 03:50:45.456: Could not have grabbed volume control keys. Is another volume control application (xfce4-volumed) running?
+
+** (wrapper-2.0:13071): WARNING **: 03:50:45.460: Binding 'XF86AudioPlay' failed!
+
+(wrapper-2.0:13071): pulseaudio-plugin-WARNING **: 03:50:45.460: Could not have grabbed multimedia control keys.
+
+(xfce4-session:13024): xfce4-session-WARNING **: 03:50:45.470: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:13024): xfce4-session-WARNING **: 03:50:45.473: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:13024): xfce4-session-WARNING **: 03:50:45.477: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(wrapper-2.0:13072): Gtk-WARNING **: 03:50:45.486: Negative content width -3 (allocation 1, extents 2x2) while allocating gadget (node button, owner GtkToggleButton)
+
+(wrapper-2.0:13073): Gtk-WARNING **: 03:50:45.492: Negative content width -1 (allocation 1, extents 1x1) while allocating gadget (node button, owner XfceArrowButton)
+
+(wrapper-2.0:13071): Gtk-WARNING **: 03:50:45.551: Negative content width -3 (allocation 1, extents 2x2) while allocating gadget (node button, owner PulseaudioButton)
+
+(Thunar:13091): dbind-WARNING **: 03:50:47.993: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+xfsettingsd: No window manager registered on screen 0.
+
+(xfdesktop:13096): dbind-WARNING **: 03:50:56.003: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-panel:13064): xfce4-panel-CRITICAL **: 03:50:58.059: panel-window.c:2245 (panel_window_active_window_geometry_changed): expression 'WNCK_IS_WINDOW (active_window)' failed.
+
+(Thunar:13091): GVFS-RemoteVolumeMonitor-WARNING **: 03:50:58.128: remote volume monitor with dbus name org.gtk.vfs.UDisks2VolumeMonitor is not supported
+No window manager registered on screen 0. To start the xfdesktop without this check, run with --disable-wm-check.
+
+(xfdesktop:13096): GVFS-RemoteVolumeMonitor-WARNING **: 03:51:01.251: remote volume monitor with dbus name org.gtk.vfs.UDisks2VolumeMonitor is not supported
+
+** (xfdesktop:13096): WARNING **: 03:51:01.301: Failed to get system bus: Could not connect: No such file or directory
+
+** (xiccd:13162): CRITICAL **: 03:51:03.956: Failed to connect to colord: Could not connect: No such file or directory
+
+** (agent:13167): CRITICAL **: 03:51:03.979: Failed to get connection to system bus: Could not connect: No such file or directory
+Tracker-Message: 03:51:03.984: Set scheduler policy to SCHED_IDLE
+Tracker-Message: 03:51:03.984: Setting priority nice level to 19
+Connection failure: Connection refused
+pa_context_connect() failed: Connection refused
+Tracker-Message: 03:51:04.017: Set scheduler policy to SCHED_IDLE
+Tracker-Message: 03:51:04.017: Setting priority nice level to 19
+
+(tracker-miner-fs:13192): GVFS-RemoteVolumeMonitor-WARNING **: 03:51:04.043: remote volume monitor with dbus name org.gtk.vfs.UDisks2VolumeMonitor is not supported
+
+(tracker-miner-fs:13192): libupower-glib-WARNING **: 03:51:04.073: Couldn't connect to proxy: Could not connect: No such file or directory
+
+(tracker-miner-fs:13192): Tracker-WARNING **: 03:51:04.074: Unable to connect to UPower
+
+(polkit-gnome-authentication-agent-1:13163): dbind-WARNING **: 03:51:04.080: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(polkit-gnome-authentication-agent-1:13163): polkit-gnome-1-WARNING **: 03:51:04.082: Error getting authority: Error initializing authority: Could not connect: No such file or directory
+
+(xfsettingsd:13189): dbind-WARNING **: 03:51:04.103: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(nm-applet:13169): dbind-WARNING **: 03:51:04.107: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(light-locker:13190): dbind-WARNING **: 03:51:04.110: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(tracker-extract:13166): GVFS-RemoteVolumeMonitor-WARNING **: 03:51:04.145: remote volume monitor with dbus name org.gtk.vfs.UDisks2VolumeMonitor is not supported
+
+(evolution-alarm-notify:13172): dbind-WARNING **: 03:51:04.167: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(nm-applet:13169): nm-applet-WARNING **: 03:51:04.171: Error connecting to system D-Bus: Could not connect: No such file or directory
+
+(nm-applet:13169): nm-applet-WARNING **: 03:51:04.172: Could not connect: No such file or directory
+
+(nm-applet:13169): libnm-CRITICAL **: 03:51:04.173: ((libnm/nm-client.c:3905)): assertion '<dropped>' failed
+
+(nm-applet:13169): libnm-CRITICAL **: 03:51:04.174: ((libnm/nm-client.c:3859)): assertion '<dropped>' failed
+
+(nm-applet:13169): libnm-CRITICAL **: 03:51:04.174: ((libnm/nm-client.c:3937)): assertion '<dropped>' failed
+
+(nm-applet:13169): libnm-CRITICAL **: 03:51:04.174: ((libnm/nm-client.c:3986)): assertion '<dropped>' failed
+
+(nm-applet:13169): libnm-CRITICAL **: 03:51:04.174: ((libnm/nm-client.c:4026)): assertion '<dropped>' failed
+
+(nm-applet:13169): libnm-CRITICAL **: 03:51:04.174: ((libnm/nm-client.c:4042)): assertion '<dropped>' failed
+
+(nm-applet:13169): libnm-CRITICAL **: 03:51:04.174: ((libnm/nm-client.c:4080)): assertion '<dropped>' failed
+
+(nm-applet:13169): libnm-CRITICAL **: 03:51:04.174: ((libnm/nm-client.c:4598)): assertion '<dropped>' failed
+
+(nm-applet:13169): libnm-CRITICAL **: 03:51:04.174: ((libnm/nm-client.c:4598)): assertion '<dropped>' failed
+system-config-printer-applet: failed to connect to system D-Bus
+
+(xfdesktop-settings:13265): dbind-WARNING **: 03:51:05.322: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfdesktop-settings:13265): GVFS-RemoteVolumeMonitor-WARNING **: 03:51:05.499: remote volume monitor with dbus name org.gtk.vfs.UDisks2VolumeMonitor is not supported
+
+** (xfdesktop:13096): WARNING **: 03:51:11.185: Failed to get system bus: Could not connect: No such file or directory
+
+(xfce4-panel:13064): xfce4-panel-CRITICAL **: 03:51:26.075: panel-window.c:2245 (panel_window_active_window_geometry_changed): expression 'WNCK_IS_WINDOW (active_window)' failed.
+
+(exo-desktop-item-edit:13295): dbind-WARNING **: 03:51:35.531: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(exo-desktop-item-edit:13295): GVFS-RemoteVolumeMonitor-WARNING **: 03:51:38.799: remote volume monitor with dbus name org.gtk.vfs.UDisks2VolumeMonitor is not supported
+
+(xfce4-panel:13064): xfce4-panel-CRITICAL **: 03:51:49.284: panel-window.c:2245 (panel_window_active_window_geometry_changed): expression 'WNCK_IS_WINDOW (active_window)' failed.
+
+(exo-open:13306): dbind-WARNING **: 03:51:49.837: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(exo-helper-2:13308): dbind-WARNING **: 03:51:49.902: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(exo-open:13314): dbind-WARNING **: 03:51:50.036: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(exo-helper-2:13318): dbind-WARNING **: 03:51:50.123: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-panel:13064): xfce4-panel-CRITICAL **: 03:52:02.799: panel-window.c:2245 (panel_window_active_window_geometry_changed): expression 'WNCK_IS_WINDOW (active_window)' failed.
+
+(exo-open:13390): dbind-WARNING **: 03:52:03.754: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(exo-helper-2:13392): dbind-WARNING **: 03:52:03.791: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-panel:13064): xfce4-panel-CRITICAL **: 03:52:24.244: panel-window.c:2245 (panel_window_active_window_geometry_changed): expression 'WNCK_IS_WINDOW (active_window)' failed.
+
+(exo-desktop-item-edit:13679): dbind-WARNING **: 03:52:29.281: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(exo-desktop-item-edit:13684): dbind-WARNING **: 03:52:30.844: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-appfinder:13689): dbind-WARNING **: 03:52:41.890: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-appfinder:13729): dbind-WARNING **: 03:52:55.727: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(exo-open:13732): dbind-WARNING **: 03:53:08.889: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(exo-helper-2:13734): dbind-WARNING **: 03:53:08.943: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+[Child 13975, MediaDecoderStateMachine #1] WARNING: 7fc60fea1820 OpenCubeb() failed to init cubeb: file /build/firefox-eMhuzb/firefox-111.0+build2/dom/media/AudioStream.cpp:281
+[Child 13975, MediaDecoderStateMachine #1] WARNING: Decoder=7fc6036e1d00 [OnMediaSinkAudioError]: file /build/firefox-eMhuzb/firefox-111.0+build2/dom/media/MediaDecoderStateMachine.cpp:4550
+ATTENTION: default value of option mesa_glthread overridden by environment.
+[Child 13975, MediaDecoderStateMachine #1] WARNING: 7fc604310820 OpenCubeb() failed to init cubeb: file /build/firefox-eMhuzb/firefox-111.0+build2/dom/media/AudioStream.cpp:281
+[Child 13975, MediaDecoderStateMachine #1] WARNING: Decoder=7fc6036e1d00 [OnMediaSinkAudioError]: file /build/firefox-eMhuzb/firefox-111.0+build2/dom/media/MediaDecoderStateMachine.cpp:4550
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: No such file or directory
+[Child 13975, MediaDecoderStateMachine #1] WARNING: 7fc604310a60 OpenCubeb() failed to init cubeb: file /build/firefox-eMhuzb/firefox-111.0+build2/dom/media/AudioStream.cpp:281
+[Child 13975, MediaDecoderStateMachine #1] WARNING: Decoder=7fc6036e1d00 [OnMediaSinkAudioError]: file /build/firefox-eMhuzb/firefox-111.0+build2/dom/media/MediaDecoderStateMachine.cpp:4550
+[ERROR viaduct::backend::ffi] Missing HTTP status
+[ERROR viaduct::backend::ffi] Missing HTTP status
+
+(exo-open:14331): dbind-WARNING **: 03:54:54.358: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(exo-helper-2:14333): dbind-WARNING **: 03:54:54.391: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-session:13024): xfce4-session-WARNING **: 04:01:31.640: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:13024): xfce4-session-WARNING **: 04:01:31.641: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:13024): xfce4-session-WARNING **: 04:01:31.643: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:13024): xfce4-session-CRITICAL **: 04:01:51.144: Failed to grab the keyboard for logout window
+
+(xfce4-session:13024): xfce4-session-WARNING **: 04:01:51.487: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:13024): xfce4-session-WARNING **: 04:01:51.489: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:13024): xfce4-session-WARNING **: 04:01:51.491: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:13024): xfce4-session-CRITICAL **: 04:01:51.567: Failed to grab the keyboard for logout window
+
+** (xiccd:13162): WARNING **: 04:02:49.215: Exiting
+xfce4-panel-Message: 04:02:49.216: Plugin systray-6 has been automatically restarted after crash.
+xfce4-panel-Message: 04:02:49.216: Plugin notification-plugin-10 has been automatically restarted after crash.
+
+(xfsettingsd:13063): libxfce4ui-WARNING **: 04:02:49.219: ICE I/O Error
+
+(xfsettingsd:13063): libxfce4ui-WARNING **: 04:02:49.219: Disconnected from session manager.
+xfsettingsd: Another instance took over. Leaving...
+
+Received signal:2->'Interrupt'
+
+(tracker-miner-fs:13192): GVFS-RemoteVolumeMonitor-WARNING **: 04:02:49.223: Owner of volume monitor org.gtk.vfs.GoaVolumeMonitor disconnected from the bus; removing drives/volumes/mounts
+
+(tracker-miner-fs:13192): GVFS-RemoteVolumeMonitor-WARNING **: 04:02:49.223: Owner of volume monitor org.gtk.vfs.AfcVolumeMonitor disconnected from the bus; removing drives/volumes/mounts
+
+(tracker-miner-fs:13192): GVFS-RemoteVolumeMonitor-WARNING **: 04:02:49.223: Owner of volume monitor org.gtk.vfs.MTPVolumeMonitor disconnected from the bus; removing drives/volumes/mounts
+
+(tracker-miner-fs:13192): GVFS-RemoteVolumeMonitor-WARNING **: 04:02:49.223: Owner of volume monitor org.gtk.vfs.GPhoto2VolumeMonitor disconnected from the bus; removing drives/volumes/mounts
+
+OK
+
+
+(xfce4-panel:13064): libxfce4ui-WARNING **: 04:02:49.344: ICE I/O Error

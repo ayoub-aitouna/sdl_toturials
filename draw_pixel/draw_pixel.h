@@ -9,7 +9,7 @@
 
 # define WIDTH 1260
 # define HEIGHT 660
-
+# define
 typedef struct pos
 {
     int x;
